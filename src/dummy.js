@@ -1,3 +1,8 @@
+//Project Name: Dummy JS
+//Version: 1.0
+//created: 5/11/2015
+//Author: Shiv Baran Singh
+//Author URI: http://shivbaran.in/
 var Dummy;
 (function(){
     //default Values
