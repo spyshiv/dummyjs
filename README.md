@@ -1,5 +1,7 @@
 # dummyjs
-JS library for generating dummy text for web developer. Lorem Ipsum....etc
+:alien: :raised_hands: :octocat: :santa: JS library for generating dummy text for web developer. Lorem Ipsum....etc
+
+Visit https://spyshiv.github.io/dummyjs
 
 # How To use dummyjs
 
