@@ -8,9 +8,6 @@ p{
 pre{
 	color:green;
 }
-.container{
-	
-}
 .container h1{
 	text-align: center;
 	text-transform: uppercase;
@@ -21,7 +18,7 @@ pre{
 	text-transform: uppercase;
 }
 
-.dummy-area div{
+.dummy-area {
 	padding-left: 10px;
 	color:green;
 }
