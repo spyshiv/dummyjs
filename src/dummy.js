@@ -42,6 +42,7 @@ var Dummy;
         var index = 0;
         var interval = setInterval(function () {
             if (index < letters.length) {
+                //If is a tag appends the whole tag
                 if (letters[index] == "<") {
                     element.innerHTML += text.substring(index, text.indexOf(">", index) + 1);
                     index = text.indexOf(">", index) + 1;
