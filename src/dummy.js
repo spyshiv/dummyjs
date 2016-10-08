@@ -51,6 +51,7 @@ var Dummy;
                     index++;
                 }
             } else {
+                //Cleans the setinterval.
                 clearInterval(interval);
             }
         }, 5);
