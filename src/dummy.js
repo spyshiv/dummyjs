@@ -4,14 +4,14 @@
 //Author: Shiv Baran Singh
 //Author URI: http://shivbaran.in/
 var Dummy;
-(function(){
+(function () {
     //default Values
-     Dummy = function() {
+    Dummy = function () {
         //Default values.
         this.type = null;
         this.query = null;
         this.data = null;
-    };     
+    };
     //static variables
     Dummy.TEXT = 2;
     Dummy.TYPE = {
@@ -19,7 +19,7 @@ var Dummy;
         SENTENCE: 2,
         WORD: 3
     };
-    
+
     //words for dummytext
     Dummy.WORDS = [
         "lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit", "ut", "aliquam,", "purus", "sit", "amet", "luctus", "venenatis,", "lectus", "magna", "fringilla", "urna,", "porttitor", "rhoncus", "dolor", "purus", "non", "enim", "praesent", "elementum", "facilisis", "leo,", "vel", "fringilla", "est", "ullamcorper", "eget", "nulla", "facilisi", "etiam", "dignissim", "diam", "quis", "enim", "lobortis", "scelerisque", "fermentum", "dui", "faucibus", "in", "ornare", "quam", "viverra", "orci", "sagittis", "eu", "volutpat", "odio", "facilisis", "mauris", "sit", "amet", "massa", "vitae", "tortor", "condimentum", "lacinia", "quis", "vel", "eros", "donec", "ac", "odio", "tempor", "orci", "dapibus", "ultrices", "in", "iaculis", "nunc", "sed", "augue", "lacus,", "viverra", "vitae", "congue", "eu,", "consequat", "ac", "felis", "donec", "et", "odio", "pellentesque", "diam", "volutpat", "commodo", "sed", "egestas", "egestas", "fringilla", "phasellus", "faucibus", "scelerisque", "eleifend", "donec", "pretium", "vulputate", "sapien", "nec", "sagittis", "aliquam", "malesuada", "bibendum", "arcu", "vitae", "elementum",
@@ -37,8 +37,28 @@ var Dummy;
     Dummy.prototype.randomInt = function (min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
+    Dummy.prototype.typing = function (element, text) {
+        var letters = text.split("");
+        var index = 0;
+        var interval = setInterval(function () {
+            if (index < letters.length) {
+                //If is a tag appends the whole tag
+                if (letters[index] == "<") {
+                    element.innerHTML += text.substring(index, text.indexOf(">", index) + 1);
+                    index = text.indexOf(">", index) + 1;
+                } else {
+                    element.innerHTML += letters[index];
+                    index++;
+                }
+            } else {
+                //Cleans the setinterval.
+                clearInterval(interval);
+            }
+        }, 5);
+    };
+
     //text creator method with parameters: how many, what
-    Dummy.prototype.createText = function(count, type) {
+    Dummy.prototype.createText = function (count, type) {
         switch (type) {
             //paragraphs are loads of sentences.
             case Dummy.TYPE.PARAGRAPH:
@@ -46,11 +66,10 @@ var Dummy;
                 for (var i = 0; i < count; i++) {
                     var paragraphLength = this.randomInt(10, 20);
                     var paragraph = this.createText(paragraphLength, Dummy.TYPE.SENTENCE);
-                    paragraphs.push('<p>'+paragraph+'</p>');
+                    paragraphs.push('<p>' + paragraph + '</p>');
                 }
                 return paragraphs.join('\n');
-                break;
-            //sentences are loads of words.
+                //sentences are loads of words.
             case Dummy.TYPE.SENTENCE:
                 var sentences = new Array;
                 for (var i = 0; i < count; i++) {
@@ -62,54 +81,52 @@ var Dummy;
                     sentences.push(sentence);
                 }
                 return (sentences.join('. ') + '.').replace(/(\.\,|\,\.)/g, '.');
-                break;
-            //words are words
+                //words are words
             case Dummy.TYPE.WORD:
                 var wordIndex = this.randomInt(0, Dummy.WORDS.length - count - 1);
-
                 return Dummy.WORDS.slice(wordIndex, wordIndex + count).join(' ').replace(/\.|\,/g, '');
-                break;
-            }
-        };
-
-       Dummy.prototype.createDummy = function(element) {
-
-        var dummy = new Array;
-        var count;
-        
-        if (/\d+-\d+[psw]/.test(this.query)){
-            var range = this.query.replace(/[a-z]/,'').split("-");
-            count = Math.floor(Math.random() * parseInt(range[1])) + parseInt(range[0]);
-        }else{
-            count = parseInt(this.query); 
         }
-        
+    };
+
+    Dummy.prototype.createDummy = function (element) {
+
+        var dummy = [];
+        var result = "";
+        var count;
+
+        if (/\d+-\d+[psw]/.test(this.query)) {
+            var range = this.query.replace(/[a-z]/, '').split("-");
+            count = Math.floor(Math.random() * parseInt(range[1])) + parseInt(range[0]);
+        } else {
+            count = parseInt(this.query);
+        }
+
         if (/\d+p/.test(this.query)) {
             var type = Dummy.TYPE.PARAGRAPH;
-        }
-        else if (/\d+s/.test(this.query)) {
+        } else if (/\d+s/.test(this.query)) {
             var type = Dummy.TYPE.SENTENCE;
-        }
-        else if (/\d+w/.test(this.query)) {
+        } else if (/\d+w/.test(this.query)) {
             var type = Dummy.TYPE.WORD;
         }
 
         dummy.push(this.createText(count, type));
-        dummy = dummy.join(' ');
+        result = dummy.join(' ');
 
-        if (element) {
-            if (this.type == Dummy.TEXT)
-                element.innerHTML += dummy;
+        if (element && this.type == Dummy.TEXT) {
+            if (element.classList.contains("dummy-typing")) {
+                this.typing(element, result);
+            } else {
+                element.innerHTML += result;
+            }
         }
 
-        if (element == null)
-            return dummy;
+        if (element == null) return dummy;
     };
     //Register as jQuery
     if (typeof jQuery != 'undefined') {
-        (function($) {
-            $.fn.dummy = function() {
-                $(this).each(function() {
+        (function ($) {
+            $.fn.dummy = function () {
+                $(this).each(function () {
                     var dummy = new Dummy;
                     dummy.type = Dummy.TEXT;
                     //data-Dummy can be taken with data function (thanks to http://forrst.com/people/webking)
@@ -119,7 +136,7 @@ var Dummy;
             };
 
             //If developer run this javascript, then we can run the Dummy.js
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('[data-dummy]').dummy();
             });
         })(jQuery);
