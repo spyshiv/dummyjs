@@ -1,5 +1,7 @@
-# dummyjs
-:alien: :raised_hands: :octocat: :santa: JS library for generating dummy text for web developer. Lorem Ipsum....etc
+# dummyjs: A JavaScript Library for Generating Dummy Text for Web Developers
+Are you tired of constantly searching for placeholder text while developing your website? Look no further than dummyjs! This JavaScript library generates dummy text, such as the classic Lorem Ipsum, making it a breeze to fill your pages with sample content.
+
+:alien: :raised_hands: :octocat: :santa:
 
 Visit https://spyshiv.github.io/dummyjs
 
@@ -7,11 +9,9 @@ Visit https://spyshiv.github.io/dummyjs
 
 Import dummyjs inside your html file
     
-     <script src="path/to/dummy.js" ></script> 
-    
-  * Note: Import jquery before importing dummyjs
+     <script src="path/to/dummy.js" ></script>
 
-You can use dummyjs in three way
+There are three ways to use dummyjs:
     
     1. Generating dummy words
     
@@ -20,29 +20,26 @@ You can use dummyjs in three way
     3. Generating dummy paragraphs 
     
     
-## 1.Generating Dummy Words
-  inside your html code add new attribute data-dummy with values "nw" where n is numeric value and w is type word
-  example
+## 1. Generating Dummy Words
+  To generate dummy words, add a new attribute to your HTML code with the format "data-dummy" followed by a numeric value and the letter "w" for "word". For example:
     
     <div data-dummy="4w"> </div>
     
-    then inside div tag 4 dummy words will be generated.
-    
-## 2.Generating Dummy Sentences
-  inside your html code add new attribute data-dummy with values "ns" where n is numeric value and s is type sentence
-  example
+This will generate four dummy words inside the div tag.
+
+## 2. Generating Dummy Sentences
+  To generate dummy sentences, use the "data-dummy" attribute with a numeric value followed by the letter "s" for "sentence". For example:
     
     <div data-dummy="4s"> </div>
     
-    then inside div tag 4 dummy sentences will be generated.
+This will generate four dummy sentences inside the div tag.
     
     
-## 3.Generating Dummy Paragraphs
-  inside your html code add new attribute data-dummy with values "np" where n is numeric value and p is type paragraph
-  example
+## 3. Generating Dummy Paragraphs
+  To generate dummy paragraphs, use the "data-dummy" attribute with a numeric value followed by the letter "p" for "paragraph". For example:
     
     <div data-dummy="4p"> </div>
     
-    then inside div tag 4 dummy paragraphs will be generated.
-    
-Enjoy...Cheers!!
+This will generate four dummy paragraphs inside the div tag.
+
+So what are you waiting for? Give dummyjs a try and enjoy your newfound productivity! Cheers!
