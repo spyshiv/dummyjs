@@ -45,16 +45,4 @@ You can use dummyjs in three way
     
     then inside div tag 4 dummy paragraphs will be generated.
     
-If you want to generate words, sentences, paragraph of random size then use minimum and maximum values as the value of data-dummy with it's type
-example
-
-    <div data-dummy="2-6w"> </div>
-    this will generate words between 2 to 6
-
-    <div data-dummy="2-6s"> </div>
-    this will generate sentences between 2 to 6
-
-    <div data-dummy="2-6p"> </div>
-    this will generate paragraphs between 2 to 6
-    
 Enjoy...Cheers!!
