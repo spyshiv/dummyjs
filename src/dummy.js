@@ -67,11 +67,11 @@
       const [num, type] = element.getAttribute('data-dummy').split(/(\d+)/).filter(Boolean);
 
       // Generate and insert the appropriate type of dummy content into the element based on the extracted type
-      switch (type) {
-        case 'P':
+      switch (type.toLowerCase()) {
+        case 'p':
           generateParagraphs(parseInt(num, 10), DUMMY_WORDS_ARR, element);
           break;
-        case 'S':
+        case 's':
           generateSentences(parseInt(num, 10), DUMMY_WORDS_ARR, element);
           break;
         case 'w':
