@@ -1,0 +1,39 @@
+{
+    "name": "dummyjs",
+    "version": "2.0.0",
+    "description": "DummyJS is an open-source JavaScript plugin that generates customizable and realistic dummy text content for web applications and software projects using standard filler texts. It's useful for development, testing, and more.",
+    "main": "dummy.js",
+    "directories": {
+        "example": "example"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/spyshiv/dummyjs.git"
+    },
+    "keywords": [
+        "JavaScript",
+        "npm",
+        "plugin",
+        "library",
+        "dummy text",
+        "Lorem Ipsum",
+        "web development",
+        "HTML",
+        "data attributes",
+        "sentences",
+        "paragraphs",
+        "productivity",
+        "open source",
+        "testing",
+        "software projects"
+    ],
+    "author": "npm",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/spyshiv/dummyjs/issues"
+    },
+    "homepage": "https://github.com/spyshiv/dummyjs#readme"
+}
