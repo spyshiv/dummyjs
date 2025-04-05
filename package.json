@@ -1,9 +1,9 @@
 {
-  "name": "dummytext",
+  "name": "dummytextjs",
   "version": "3.0.0",
   "description": "A plug-and-play dummy content generator for words, sentences, and paragraphs — with built-in auto-injection for Vue, React, and Angular apps using HTML data attributes.",
-  "main": "./dist/dummytext.umd.js",
-  "module": "./dist/dummytext.es.js",
+  "main": "./dist/dummytextjs.umd.js",
+  "module": "./dist/dummytextjs.es.js",
   "files": [
     "dist"
   ],
