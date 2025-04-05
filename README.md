@@ -1,45 +1,226 @@
-# dummyjs: A JavaScript Library for Generating Dummy Text for Web Developers
-Are you tired of constantly searching for placeholder text while developing your website? Look no further than dummyjs! This JavaScript library generates dummy text, such as the classic Lorem Ipsum, making it a breeze to fill your pages with sample content.
+# 🧠 dummytext
 
-:alien: :raised_hands: :octocat: :santa:
+**dummytext** is a lightweight utility to generate realistic dummy text (words, sentences, or paragraphs) for development and testing. It also supports automatic injection of dummy content into HTML elements via the `data-dummy` attribute.
 
-Visit https://spyshiv.github.io/dummyjs
+---
 
-# How To use dummyjs
+## 🚀 Features
 
-Import dummyjs inside your html file
-    
-     <script src="path/to/dummy.js" ></script>
+- 🔤 Generate random words, sentences, and paragraphs.
+- ⚡ Auto-inject dummy content into HTML elements using `data-dummy`.
+- ✅ Framework-agnostic – works with **Vue**, **React**, **Angular**, and vanilla JS.
+- 💡 TypeScript support out of the box.
+- 📦 Lightweight and zero dependencies.
 
-There are three ways to use dummyjs:
-    
-    1. Generating dummy words
-    
-    2. Generating dummy Sentences
-    
-    3. Generating dummy paragraphs 
-    
-    
-## 1. Generating Dummy Words
-  To generate dummy words, add a new attribute to your HTML code with the format "data-dummy" followed by a numeric value and the letter "w" for "word". For example:
-    
-    <div data-dummy="4w"> </div>
-    
-This will generate four dummy words inside the div tag.
+---
 
-## 2. Generating Dummy Sentences
-  To generate dummy sentences, use the "data-dummy" attribute with a numeric value followed by the letter "s" for "sentence". For example:
-    
-    <div data-dummy="4s"> </div>
-    
-This will generate four dummy sentences inside the div tag.
-    
-    
-## 3. Generating Dummy Paragraphs
-  To generate dummy paragraphs, use the "data-dummy" attribute with a numeric value followed by the letter "p" for "paragraph". For example:
-    
-    <div data-dummy="4p"> </div>
-    
-This will generate four dummy paragraphs inside the div tag.
+## 📦 Installation
 
-So what are you waiting for? Give dummyjs a try and enjoy your newfound productivity! Cheers!
+```bash
+npm install dummytext
+```
+
+---
+
+## ✨ Usage
+
+### 📥 Import API
+
+```ts
+import {
+  generateWords,
+  generateSentences,
+  generateParagraphs,
+  autoInjectDummyContent
+} from "dummytext";
+```
+
+---
+
+## 🧩 Framework Usage Examples
+
+### ✅ Vue
+
+#### Manual
+
+```vue
+<template>
+  <div>{{ dummyText }}</div>
+</template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+import { generateWords } from "dummytext";
+
+const dummyText = ref("");
+
+onMounted(() => {
+  dummyText.value = generateWords(10);
+});
+</script>
+```
+
+#### Auto Inject
+
+```vue
+<template>
+  <div data-dummy="3p"></div>
+</template>
+
+<script setup>
+import { onMounted } from "vue";
+import { autoInjectDummyContent } from "dummytext";
+
+onMounted(() => {
+  autoInjectDummyContent();
+});
+</script>
+```
+
+---
+
+### ⚛️ React
+
+#### Manual
+
+```tsx
+import React, { useEffect, useState } from "react";
+import { generateSentences } from "dummytext";
+
+function App() {
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    setText(generateSentences(5));
+  }, []);
+
+  return <div>{text}</div>;
+}
+
+export default App;
+```
+
+#### Auto Inject
+
+```tsx
+import React, { useEffect } from "react";
+import { autoInjectDummyContent } from "dummytext";
+
+function App() {
+  useEffect(() => {
+    autoInjectDummyContent();
+  }, []);
+
+  return (
+    <div>
+      <h2 data-dummy="2s"></h2>
+      <p data-dummy="3p"></p>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+### 🅰️ Angular
+
+#### Manual
+
+```ts
+import { Component, OnInit } from "@angular/core";
+import { generateParagraphs } from "dummytext";
+
+@Component({
+  selector: "app-dummy",
+  template: `<div [innerHTML]="dummyText"></div>`
+})
+export class DummyComponent implements OnInit {
+  dummyText = "";
+
+  ngOnInit(): void {
+    this.dummyText = generateParagraphs(2);
+  }
+}
+```
+
+#### Auto Inject
+
+```ts
+import { Component, AfterViewInit } from "@angular/core";
+import { autoInjectDummyContent } from "dummytext";
+
+@Component({
+  selector: "app-auto-dummy",
+  template: `<div data-dummy="5p"></div>`
+})
+export class AutoDummyComponent implements AfterViewInit {
+  ngAfterViewInit(): void {
+    autoInjectDummyContent();
+  }
+}
+```
+
+---
+
+## 🔠 `data-dummy` Attribute Syntax
+
+The `data-dummy` attribute supports the following formats:
+
+| Syntax | Meaning      |
+| ------ | ------------ |
+| `5w`   | 5 words      |
+| `3s`   | 3 sentences  |
+| `2p`   | 2 paragraphs |
+
+These values can be used to instruct `autoInjectDummyContent()` to replace the content of elements dynamically.
+
+---
+
+## 📘 API Reference
+
+### `generateWords(count: number): string`
+
+Generates the specified number of random words.
+
+### `generateSentences(count: number): string`
+
+Generates the specified number of random sentences.
+
+### `generateParagraphs(count: number): string`
+
+Generates the specified number of random paragraphs.
+
+### `autoInjectDummyContent(): void`
+
+Automatically finds elements with the `data-dummy` attribute and injects dummy text into them.
+
+---
+
+## 🛠 Example HTML (Vanilla JS)
+
+```html
+<body>
+  <h1 data-dummy="2s"></h1>
+  <p data-dummy="1p"></p>
+
+  <script type="module">
+    import { autoInjectDummyContent } from "dummytext";
+
+    autoInjectDummyContent();
+  </script>
+</body>
+```
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+## ✨ Author
+
+Created with 💻 by [@spyshiv](https://github.com/spyshiv)

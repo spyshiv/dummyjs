@@ -1,39 +1,47 @@
 {
-    "name": "dummyjs",
-    "version": "2.0.0",
-    "description": "DummyJS is an open-source JavaScript plugin that generates customizable and realistic dummy text content for web applications and software projects using standard filler texts. It's useful for development, testing, and more.",
-    "main": "dummy.js",
-    "directories": {
-        "example": "example"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/spyshiv/dummyjs.git"
-    },
-    "keywords": [
-        "JavaScript",
-        "npm",
-        "plugin",
-        "library",
-        "dummy text",
-        "Lorem Ipsum",
-        "web development",
-        "HTML",
-        "data attributes",
-        "sentences",
-        "paragraphs",
-        "productivity",
-        "open source",
-        "testing",
-        "software projects"
-    ],
-    "author": "npm",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/spyshiv/dummyjs/issues"
-    },
-    "homepage": "https://github.com/spyshiv/dummyjs#readme"
+  "name": "dummytext",
+  "version": "3.0.0",
+  "description": "A plug-and-play dummy content generator for words, sentences, and paragraphs — with built-in auto-injection for Vue, React, and Angular apps using HTML data attributes.",
+  "main": "./dist/dummytext.umd.js",
+  "module": "./dist/dummytext.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spyshiv/dummyjs.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "npm",
+    "plugin",
+    "library",
+    "dummy text",
+    "Lorem Ipsum",
+    "web development",
+    "HTML",
+    "data attributes",
+    "sentences",
+    "paragraphs",
+    "productivity",
+    "open source",
+    "testing",
+    "software projects"
+  ],
+  "author": "npm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spyshiv/dummyjs/issues"
+  },
+  "homepage": "https://github.com/spyshiv/dummyjs#readme"
 }
