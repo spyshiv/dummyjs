@@ -1,6 +1,6 @@
-# 🧠 dummytext
+# 🧠 dummytextjs
 
-**dummytext** is a lightweight utility to generate realistic dummy text (words, sentences, or paragraphs) for development and testing. It also supports automatic injection of dummy content into HTML elements via the `data-dummy` attribute.
+**dummytextjs** is a lightweight utility to generate realistic dummy text (words, sentences, or paragraphs) for development and testing. It also supports automatic injection of dummy content into HTML elements via the `data-dummy` attribute.
 
 ---
 
@@ -17,7 +17,7 @@
 ## 📦 Installation
 
 ```bash
-npm install dummytext
+npm install dummytextjs
 ```
 
 ---
@@ -32,7 +32,7 @@ import {
   generateSentences,
   generateParagraphs,
   autoInjectDummyContent
-} from "dummytext";
+} from "dummytextjs";
 ```
 
 ---
@@ -50,7 +50,7 @@ import {
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { generateWords } from "dummytext";
+import { generateWords } from "dummytextjs";
 
 const dummyText = ref("");
 
@@ -69,7 +69,7 @@ onMounted(() => {
 
 <script setup>
 import { onMounted } from "vue";
-import { autoInjectDummyContent } from "dummytext";
+import { autoInjectDummyContent } from "dummytextjs";
 
 onMounted(() => {
   autoInjectDummyContent();
@@ -85,7 +85,7 @@ onMounted(() => {
 
 ```tsx
 import React, { useEffect, useState } from "react";
-import { generateSentences } from "dummytext";
+import { generateSentences } from "dummytextjs";
 
 function App() {
   const [text, setText] = useState("");
@@ -104,7 +104,7 @@ export default App;
 
 ```tsx
 import React, { useEffect } from "react";
-import { autoInjectDummyContent } from "dummytext";
+import { autoInjectDummyContent } from "dummytextjs";
 
 function App() {
   useEffect(() => {
@@ -130,7 +130,7 @@ export default App;
 
 ```ts
 import { Component, OnInit } from "@angular/core";
-import { generateParagraphs } from "dummytext";
+import { generateParagraphs } from "dummytextjs";
 
 @Component({
   selector: "app-dummy",
@@ -149,7 +149,7 @@ export class DummyComponent implements OnInit {
 
 ```ts
 import { Component, AfterViewInit } from "@angular/core";
-import { autoInjectDummyContent } from "dummytext";
+import { autoInjectDummyContent } from "dummytextjs";
 
 @Component({
   selector: "app-auto-dummy",
@@ -206,7 +206,7 @@ Automatically finds elements with the `data-dummy` attribute and injects dummy t
   <p data-dummy="1p"></p>
 
   <script type="module">
-    import { autoInjectDummyContent } from "dummytext";
+    import { autoInjectDummyContent } from "dummytextjs";
 
     autoInjectDummyContent();
   </script>
