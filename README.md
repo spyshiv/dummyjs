@@ -1,6 +1,6 @@
-# 🧠 dummytextjs
+# 💻 📝 dummytextjs
 
-**dummytextjs** is a lightweight utility to generate realistic dummy text (words, sentences, or paragraphs) for development and testing. It also supports automatic injection of dummy content into HTML elements via the `data-dummy` attribute.
+**dummytextjs** is a lightweight utility for generating realistic dummy text (words, sentences, or paragraphs) for development and testing. It also supports the automatic injection of dummy content into HTML elements via the `data-dummy` attribute.
 
 ---
 
@@ -174,7 +174,7 @@ The `data-dummy` attribute supports the following formats:
 | `3s`   | 3 sentences  |
 | `2p`   | 2 paragraphs |
 
-These values can be used to instruct `autoInjectDummyContent()` to replace the content of elements dynamically.
+These values can be used to instruct `autoInjectDummyContent()` to dynamically replace the elements' content.
 
 ---
 
