@@ -1,6 +1,6 @@
 {
   "name": "dummytextjs",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A plug-and-play dummy content generator for words, sentences, and paragraphs — with built-in auto-injection for Vue, React, and Angular apps using HTML data attributes.",
   "main": "./dist/dummytextjs.umd.js",
   "module": "./dist/dummytextjs.es.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spyshiv/dummyjs.git"
+    "url": "git+https://github.com/spyshiv/dummytextjs.git"
   },
   "keywords": [
     "JavaScript",
@@ -38,10 +38,10 @@
     "testing",
     "software projects"
   ],
-  "author": "npm",
-  "license": "ISC",
+  "author": "Shiv Baran Singh <spyshiv@gmail.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/spyshiv/dummyjs/issues"
+    "url": "https://github.com/spyshiv/dummytextjs/issues"
   },
-  "homepage": "https://github.com/spyshiv/dummyjs#readme"
+  "homepage": "https://github.com/spyshiv/dummytextjs#readme"
 }
